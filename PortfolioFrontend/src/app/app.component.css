@@ -1,0 +1,11 @@
+h1{
+    color: white; 
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+.contenedor-texto{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center
+}
+

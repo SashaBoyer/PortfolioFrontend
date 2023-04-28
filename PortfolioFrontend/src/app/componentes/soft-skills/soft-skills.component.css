@@ -1,0 +1,17 @@
+.contenedor-soft-skills{
+    background-color: black;
+}
+
+.idiomas img{
+    box-shadow: 5px 5px 40px #055ccf;
+    width: -webkit-fill-available;  
+}
+
+.card-soft-skills{
+    width: 400px !important;
+    height: 500px !important;;
+}
+
+.btn-secondary:hover{
+    background-color: green !important;
+}

@@ -1,0 +1,21 @@
+  <!-- logueo usuario edicion -->
+  <div id="nav">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+        <a class="navbar-brand"><img src="../assets/ArgentinaPrograma_logo1.png" alt="logoArgentinaPrograma"></a>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+              <div class="redes-sociales">
+                <a href="https://www.linkedin.com/in/sasha-b-878328aa/"><img src="../../../assets/linkedin.png" alt="logo linkedin"></a>
+                <a href="https://github.com/SashaBoyer"><img src="../../../assets/github.png" alt="logo github"></a>
+              </div>
+              <a class="navbar-brand">
+                <!--../assets/unknown_person.jpg-->
+                <!--<img [src]="miPortfolio.userImage" alt="imagen de perfil" width="50" height="55" class="d-inline-block" id="imagen-sesion">
+                {{miPortfolio.name}}-->
+                <button class="btn btn-outline-success" type="submit" (click)="login()" *ngIf="!isLogged">Login</button>
+                <button class="btn btn-outline-success" type="submit" (click)="onLogOut()" *ngIf="isLogged">Cerrar sesión</button>
+              </a>
+            </div>
+        </nav>
+ </div>

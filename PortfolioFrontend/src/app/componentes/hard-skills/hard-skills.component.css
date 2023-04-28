@@ -1,0 +1,12 @@
+.contenedor-hard-skills{
+    margin-top: 30px !important;;
+    margin-bottom: 5%;
+}
+
+.row{
+    align-items: center;
+}
+
+.btn-secondary:hover{
+    background-color: green !important;
+}

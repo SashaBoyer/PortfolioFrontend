@@ -1,0 +1,39 @@
+.card-experiencia:hover{
+    transform:scale(1.1);
+    box-shadow: 5px 5px 40px #fff;  
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+  }
+
+.boton-eliminar-experiencia{
+    position: absolute;   
+}
+
+.boton-editar-experiencia{
+    position: absolute;
+    margin-right: 50px !important;
+}
+
+.experiencia-educacion{
+    background-color: black;
+}
+
+.card-color-fondo{
+    background-color: black;
+}
+
+.boton-eliminar-educacion{
+    position: absolute;
+    margin-left: 88%;
+}
+
+.boton-editar-educacion{
+    position: absolute;
+}
+
+.btn-secondary:hover{
+    background-color: green !important;
+}

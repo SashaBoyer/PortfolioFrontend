@@ -1,0 +1,17 @@
+.contenedor-carrusel{
+    margin-top: 50px;
+    margin-bottom: 3%;
+}
+
+.contenedor-carrusel-proyectos{
+  margin-top: 20px;
+}
+
+.carrusel{
+    width: 700px !important;
+    margin: auto !important;
+}
+
+.carousel-caption{
+    background-color:rgba(0, 0, 0, 0.712);
+}

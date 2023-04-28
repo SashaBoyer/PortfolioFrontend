@@ -1,0 +1,16 @@
+#imagen-sesion{
+    border-radius: 75%;  
+}
+
+.redes-sociales img{
+    width: 30px !important ;
+    margin-right: 10px !important;
+}
+
+.redes-sociales{
+    float: right;
+}
+
+.btn-outline-success{
+    margin-left: 10px !important;
+}
