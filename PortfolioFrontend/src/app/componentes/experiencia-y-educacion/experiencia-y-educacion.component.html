@@ -6,40 +6,45 @@
     <div class="row justify-content-center">  
       <h2 class="mb-4 text-center">Experiencia Laboral</h2>
       <div class="col-lg-10 col-auto"> 
+        
+<!--*ngFor="let expe of listaExperiencia""--><!--(click)="editar_experiencia()""-->
         <div class="card-experiencia border border-light card m-3 mx-5">
 
           <div class="d-flex flex-row-reverse">
             <button type="button" class="boton-eliminar-experiencia btn btn-danger">X</button>
-            <button type="button" class="boton-editar-experiencia btn btn-primary"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
+            <button type="button" class="boton-editar-experiencia btn btn-primary" routerLink="/modificar_experiencia"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
+            <!--/{{experienciaLab.id}}-->
           </div>    
 
           <div class="card-body card-color-fondo">
             <ul>
               <li>
-                <h3>Empresa 1</h3>
-                <h5>puesto</h5>
-                <h6><time>desde</time>-<time>hasta</time></h6>
+                <h3>Empresa 1</h3> <!--{{experienciaLab.empresa}}-->
+                <h5>Puesto</h5><!--{{experienciaLab.puesto}}-->
+                <h6><time>Desde</time>-<time>Hasta</time></h6><!--{{experienciaLab.fecha-desde}}  {{experienciaLab.fecha-hasta}}-->
               </li>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error neque ab laborum impedit sed itaque commodi doloribus consequuntur vel excepturi?
-              </p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim aperiam placeat odit harum natus saepe, modi nesciunt vel dolore suscipit.
+              </p><!--{{experienciaLab.descripcion}}-->
             </ul>
           </div>
         </div>
 
+
+
         <div class="card-experiencia border border-light card m-3 mx-5">
 
           <div class="d-flex flex-row-reverse">
-            <button type="button" class="boton-eliminar-experiencia btn btn-danger">X</button>
-              <button type="button" class="boton-editar-experiencia btn btn-primary"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
+            <button type="button" class="boton-eliminar-experiencia btn btn-danger" (click)="borrarExperiencia">X</button>
+              <button type="button" class="boton-editar-experiencia btn btn-primary" routerLink="/modificar_experiencia"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
             </div> 
 
           <div class="card-body card-color-fondo">
             <ul>
               <li>
-                <h3>Empresa 1</h3>
-                <h5>puesto</h5>
-                <h6><time>desde</time>-<time>hasta</time></h6>
+                <h3>Empresa 2</h3>
+                <h5>Puesto</h5>
+                <h6><time>Desde</time>-<time>Hasta</time></h6>
               </li>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Error neque ab laborum impedit sed itaque commodi doloribus consequuntur vel excepturi?
@@ -117,7 +122,7 @@
 
         </div>
         
-        <button type="button" class="d-block mx-auto btn btn-secondary">Añadir</button>
+        <button type="button" class="d-block mx-auto btn btn-secondary" (click)="cargarEducacion()" >Añadir</button>
       
       </div>   
   

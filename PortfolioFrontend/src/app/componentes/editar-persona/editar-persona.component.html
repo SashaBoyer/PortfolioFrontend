@@ -1,0 +1,28 @@
+<div class="container"></div>
+
+<h1 class="m-5">Modificar información acerca de mi</h1>
+
+<form (ngSubmit)="editarPersona()" class="m-5">
+    <div class="form-group m-3">
+      <label for="nombrePersona">Nombre</label>
+      <input type="text" class="form-control" id="nombrePersona" name="nombre" placeholder="Nombre" [(ngModel)]="datosPersona.nombre" required="">
+    </div>
+    <div class="form-group m-3">
+      <label for="apellidoPersona">Apellido</label>
+      <input type="text" class="form-control" id="apellidoPersona" name="apellido" placeholder="Apellido" [(ngModel)]="datosPersona.apellido" required="">
+    </div>
+    <div class="form-group m-3">
+        <label for="tituloPersona">Titulo</label>
+        <input type="text" class="form-control" id="tituloPersona" name="titulo" placeholder="Titulo" [(ngModel)]="datosPersona.titulo" required="">
+    </div>
+    <div class="form-group m-3">
+        <label for="descriPersona">Descripción</label>
+        <input type="text" class="form-control" id="descriPersona" name="descripcion" placeholder="Descripcion" [(ngModel)]="datosPersona.descripcion" required="">
+      </div>
+      <div class="form-group m-3">
+        <label for="imagenPersona">Imagen</label>
+        <input type="file" class="form-control" id="descripcionExperiencia" name="descripcion" placeholder="Subir imagen" [(ngModel)]="datosPersona.img" required="">
+      </div>
+    <button type="submit" value="Enviar" class="btn btn-dark m-3">Enviar</button>
+  </form>
+
