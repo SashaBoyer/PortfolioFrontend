@@ -10,23 +10,39 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 })
 export class EditarPersonaComponent implements OnInit{
 
-  datosPersona: Persona = null;
+  persona: Persona = new Persona("","","","","");
   
 
-  constructor(private personaServ: PersonaService, private activatedRouter: ActivatedRoute, private router: Router){}
+  constructor(private router: Router, private personaServ: PersonaService, private activatedRouter: ActivatedRoute){}
 
 
-  ngOnInit():void {
-    const id = this.activatedRouter.snapshot.params['id'];
-    this.personaServ.findPersona(id).subscribe(
-      data =>{
-        this.datosPersona = data;
+  ngOnInit() {
+ this.editar_persona();
+  }
+  
+  editar_persona(){
+    let id=localStorage.getItem("id");
+    this.personaServ.findPersona(id)
+    .subscribe(data =>{
+      this.persona = data;
+    } 
+    );
+  }
+
+  persona_modificada(persona:Persona){
+      this.personaServ.editPersona(persona)
+      .subscribe(data =>{
+        this.persona = data;
+        alert("Persona modificada con éxito")
+        this.router.navigate([''])
       }, err =>{
         alert("Falló modificar persona");
         this.router.navigate(['']);
       }
-    )
+      );
   }
+
+  /*
 
   editarPersona():void {
     const id = this.activatedRouter.snapshot.params['id'];
@@ -39,7 +55,11 @@ export class EditarPersonaComponent implements OnInit{
       this.router.navigate(['']);
     })
 
-  }
+  }    en ngOnInit       const id = this.activatedRouter.snapshot.params['id'];
+    this.personaServ.findPersona(id).subscribe(
+      data =>{
+        this.datosPersona = data;
+      },*/
     
 
 }

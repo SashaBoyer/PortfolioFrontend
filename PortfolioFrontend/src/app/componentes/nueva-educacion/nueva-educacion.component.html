@@ -1,0 +1,26 @@
+<h1 class="m-5">Agregar Educación</h1>
+
+<form (ngSubmit)="onCreate()" #f="ngForm" class="m-5">
+    <div class="form-group m-3">
+      <label for="nombreEst">Establecimiento</label>
+      <input type="text" class="form-control" id="nombreEst" name="establecimiento" placeholder="Nombre de establecimiento" [(ngModel)]="establecimiento" required="">
+    </div>
+    <div class="form-group m-3">
+      <label for="tituloEdu">Titulo</label>
+      <input type="text" class="form-control" id="tituloEdu" name="titulo" placeholder="Titulo" [(ngModel)]="titulo" required="">
+    </div>
+    <div class="form-group m-3">
+        <label for="fechaDesde">Fecha Desde</label>
+        <input type="date" class="form-control" id="fechaDesde" name="fecha_desde" [(ngModel)]="fecha_desde" required="">
+    </div>
+    <div class="form-group m-3">
+        <label for="fechaHasta">Fecha Hasta</label>
+        <input type="date" class="form-control" id="fechaHasta" name="fecha_hasta" [(ngModel)]="fecha_hasta" required="">
+      </div>
+      <div class="form-group m-3">
+        <label for="imagenEdu">Imagen</label>
+        <input type="url" class="form-control" id="imagenEdu" name="imagen" [(ngModel)]="imagen" placeholder="Url de imagen">
+      </div>
+    <button type="submit" value="Enviar" class="btn btn-dark m-3">Enviar</button>
+  </form>
+

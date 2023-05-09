@@ -9,7 +9,7 @@
         <!--Edicion-->
         <div class="d-flex flex-row-reverse">
           <button type="button" class="boton-eliminar-acerca-de btn btn-danger">X</button>
-            <button type="button" class="boton-editar-acerca-de btn btn-primary" routerLink="/editar_persona"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
+          <button type="button" class="boton-editar-acerca-de btn btn-primary" (click)="editar_persona(persona)" routerLink="/editar_persona"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
           </div>
 
           <!--{{persona.nombre}} {{persona.apellido}}-->

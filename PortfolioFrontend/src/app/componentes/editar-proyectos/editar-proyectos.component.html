@@ -1,0 +1,24 @@
+<div class="container"></div>
+
+<h1 class="m-5">Modificar Proyectos</h1>
+
+<form  (ngSubmit)="onCreate()" #f="ngForm" class="m-5">
+    <div class="form-group m-3">
+      <label for="nombreProyecto">Proyecto</label>
+      <input type="text" class="form-control" id="nombreProyecto" placeholder="Fecha de realización" name="nombre">
+    </div>
+    <div class="form-group m-3">
+        <label for="descriProyecto">Descripción</label>
+        <input type="text" class="form-control" id="descriProyecto" name="descripcion" placeholder="Descripcion del proyecto" [(ngModel)]="descripcion">
+      </div>
+    <div class="form-group m-3">
+      <label for="fechaRealizacion">Fecha de realización</label>
+      <input type="text" class="form-control" id="fechaRealizacion" name="realizacion" placeholder="Fecha de realización" [(ngModel)]="fecha_realizacion">
+    </div>
+      <div class="form-group m-3">
+        <label for="imagenProyecto">Imagen</label>
+        <input type="url" class="form-control" id="imagenProyecto" name="imagen" placeholder="Url de la imagen" [(ngModel)]="img">
+      </div>
+
+    <button type="submit" value="Enviar" class="btn btn-dark m-3">Enviar</button>
+  </form>

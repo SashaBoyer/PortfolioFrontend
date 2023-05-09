@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵDEFAULT_LOCALE_ID } from '@angular/core';
+import { Router } from '@angular/router';
 import { Persona } from 'src/app/model/persona.model';
 import { PersonaService } from 'src/app/servicios/persona.service';
 
@@ -7,13 +8,23 @@ import { PersonaService } from 'src/app/servicios/persona.service';
   templateUrl: './acerca-de.component.html',
   styleUrls: ['./acerca-de.component.css']
 })
+
 export class AcercaDeComponent implements OnInit {
+  
   persona: Persona = new Persona("", "", "", "", "");
 
-  constructor(public personaService: PersonaService){}
+  constructor(private personaService: PersonaService, private router: Router){}
 
-  ngOnInit():void {
-    this.personaService.getPersona().subscribe(data => {this.persona = data})
+  ngOnInit() {
+    this.personaService.getPersona()
+      .subscribe(data => {
+        this.persona = data;
+      });
+  }
+
+  editar_persona(persona: Persona):void {
+    localStorage.setItem("id",this.persona.id.toString());
+    this.router.navigate(["editar_persona"]);
   }
 
 }

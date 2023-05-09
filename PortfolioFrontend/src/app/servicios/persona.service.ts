@@ -8,7 +8,7 @@ import { Persona } from '../model/persona.model';
 })
 export class PersonaService {
 
-  URL = 'https://localhost:8080/persona';
+  URL = 'http://localhost:8080/persona';
 
   constructor(private http:HttpClient) { }
 
@@ -24,7 +24,7 @@ export class PersonaService {
     return this.http.delete<string>(`${this.URL}/borrar/${id}`);
   }
 
-  public editPersona(id: any, persona: Persona): Observable<Persona> {
+  public editPersona(persona: Persona): Observable<Persona> {
     const url = `${this.URL}/editar/${persona.id}?nombre=${persona.nombre}&apellido=${persona.apellido}&imagen=${persona.img}&titulo=${persona.titulo}&descripcion=${persona.descripcion}`;
     return this.http.put<Persona>(url, persona);
   }

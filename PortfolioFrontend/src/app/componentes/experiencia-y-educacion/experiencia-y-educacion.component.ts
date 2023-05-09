@@ -4,6 +4,7 @@ import { Educacion } from 'src/app/model/educacion.model';
 import { Experiencia } from 'src/app/model/experiencia.model';
 import { EducacionService } from 'src/app/servicios/educacion.service';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-experiencia-y-educacion',
@@ -13,29 +14,47 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 
 export class ExperienciaYEducacionComponent implements OnInit {
   
-  listaEducacion: Educacion[] = [];
+  educacion: Educacion[] = [];
 
   listaExperiencia: Experiencia[] = [];
 
-  constructor(private router:Router, public educacionService: EducacionService, public experienciaService: ExperienciaService) {}
-  
+  constructor(private router:Router, public educacionService: EducacionService, public experienciaService: ExperienciaService /*,private tokenService: TokenService*/) {}
+  /*isLogged = false;*/
+
 
   ngOnInit(): void {
-    this.cargarExperiencia;
-    this.cargarEducacion;
+    this.cargarExperiencia();
+    this.cargarEducacion();
   };
 
   cargarEducacion(): void {
-    this.educacionService.getEducacion().subscribe(data => {this.listaEducacion = data;
-      console.log("CONSOLE PRUEBA EDUCACION: "+this.listaEducacion[1].establecimiento)
+    this.educacionService.listaEducacion().subscribe(
+      data => {this.educacion = data;
+      console.log("CONSOLE PRUEBA EDUCACION: "+this.educacion[1].establecimiento)
     })
+    /*if(this.tokenService.getToken()){
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }*/
   };
+
+  borrarEducacion(id?: number){
+    if(id != undefined){
+      this.educacionService.deleteEducacion(id).subscribe(
+        data => {
+          this.cargarEducacion();
+        }, err=> {
+          alert("No se pudo borrar la educacion");
+        })
+      }
+  }
 
     cargarExperiencia(): void {
       this.experienciaService.getExperiencia().subscribe(data => {this.listaExperiencia = data
         console.log("CONSOLE PRUEBA EXPERIENCIA: "+this.listaExperiencia[1].empresa)
       })
-    };
+    }
 
     borrarExperiencia(id?: number): void {
       if(id != undefined){
