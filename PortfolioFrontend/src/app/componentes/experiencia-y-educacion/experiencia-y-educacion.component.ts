@@ -18,11 +18,16 @@ export class ExperienciaYEducacionComponent implements OnInit {
 
   listaExperiencia: Experiencia[] = [];
 
-  constructor(private router:Router, public educacionService: EducacionService, public experienciaService: ExperienciaService /*,private tokenService: TokenService*/) {}
-  /*isLogged = false;*/
+  isLogged = false;
+
+  constructor(private router:Router, public educacionService: EducacionService, public experienciaService: ExperienciaService, private tokenService:TokenService) {}
 
 
   ngOnInit(): void {
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    }
+    else {this.isLogged = false;}
     this.cargarExperiencia();
     this.cargarEducacion();
   };
@@ -32,11 +37,6 @@ export class ExperienciaYEducacionComponent implements OnInit {
       data => {this.educacion = data;
       console.log("CONSOLE PRUEBA EDUCACION: "+this.educacion[1].establecimiento)
     })
-    /*if(this.tokenService.getToken()){
-      this.isLogged = true;
-    } else {
-      this.isLogged = false;
-    }*/
   };
 
   borrarEducacion(id?: number){

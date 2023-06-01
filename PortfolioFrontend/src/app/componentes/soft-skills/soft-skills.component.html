@@ -10,8 +10,8 @@
 
 
       <div class="d-flex flex-row-reverse">
-        <button type="button" class="boton-eliminar-soft-skills btn btn-danger">X</button>
-        <button type="button" class="boton-editar-soft-skills btn btn-primary"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
+        <button type="button" class="boton-eliminar-soft-skills btn btn-danger" *ngIf="isLogged">X</button>
+        <button type="button" class="boton-editar-soft-skills btn btn-primary" *ngIf="isLogged"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
       </div>
       <h4>Colaboracion</h4>
       <div class="progress mb-5">
@@ -21,8 +21,8 @@
       
 
       <div class="d-flex flex-row-reverse">
-        <button type="button" class="boton-eliminar-soft-skills btn btn-danger">X</button>
-        <button type="button" class="boton-editar-soft-skills btn btn-primary"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
+        <button type="button" class="boton-eliminar-soft-skills btn btn-danger" *ngIf="isLogged">X</button>
+        <button type="button" class="boton-editar-soft-skills btn btn-primary" *ngIf="isLogged"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
       </div>
       <h4>Análisis</h4>
       <div class="progress mb-5">
@@ -32,8 +32,8 @@
 
 
       <div class="d-flex flex-row-reverse">
-        <button type="button" class="boton-eliminar-soft-skills btn btn-danger">X</button>
-        <button type="button" class="boton-editar-soft-skills btn btn-primary"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
+        <button type="button" class="boton-eliminar-soft-skills btn btn-danger" *ngIf="isLogged">X</button>
+        <button type="button" class="boton-editar-soft-skills btn btn-primary" *ngIf="isLogged"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
       </div>
       <h4>Diseño</h4>
       <div class="progress mb-5">
@@ -43,8 +43,8 @@
 
 
       <div class="d-flex flex-row-reverse">
-        <button type="button" class="boton-eliminar-soft-skills btn btn-danger">X</button>
-        <button type="button" class="boton-editar-soft-skills btn btn-primary"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
+        <button type="button" class="boton-eliminar-soft-skills btn btn-danger" *ngIf="isLogged">X</button>
+        <button type="button" class="boton-editar-soft-skills btn btn-primary" *ngIf="isLogged"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
       </div>
       <h4>Organización</h4>
       <div class="progress mb-5">
@@ -52,7 +52,7 @@
         </div>
       </div>
 
-      <button type="button" class="d-block mx-auto btn btn-secondary">Añadir</button>  
+      <button type="button" class="d-block mx-auto btn btn-secondary" *ngIf="isLogged">Añadir</button>  
       
       
     <!--idiomas-->
@@ -67,8 +67,8 @@
             <div class="card-soft-skills border-light card bg-black d-flex m-5">
 
               <div class="d-flex flex-row-reverse">
-                <button type="button" class="boton-eliminar-soft-skills btn btn-danger">X</button>
-                <button type="button" class="boton-editar-soft-skills btn btn-primary"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
+                <button type="button" class="boton-eliminar-soft-skills btn btn-danger" *ngIf="isLogged">X</button>
+                <button type="button" class="boton-editar-soft-skills btn btn-primary" *ngIf="isLogged"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
               </div>
 
               <h4 class="text-center p-2 pb-3">Inglés</h4>
@@ -81,7 +81,7 @@
         </div>
       </div>
             
-            <button type="button" class="d-block mx-auto btn btn-secondary">Añadir</button>
+            <button type="button" class="d-block mx-auto btn btn-secondary" *ngIf="isLogged">Añadir</button>
 
 
     </div>
