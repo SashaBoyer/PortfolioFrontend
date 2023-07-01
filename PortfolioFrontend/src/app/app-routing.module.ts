@@ -9,6 +9,7 @@ import { NuevaEducacionComponent } from './componentes/nueva-educacion/nueva-edu
 import { EditarEducacionComponent } from './componentes/editar-educacion/editar-educacion.component';
 import { NuevaExperienciaComponent } from './componentes/nueva-experiencia/nueva-experiencia.component';
 
+
 const routes: Routes = [
   {path:'', component: HomeComponent},
   {path:'login', component: LoginComponent},
