@@ -30,6 +30,6 @@ export class EducacionService {
   }
 
   public updateEducacion(id:number, educacion: Educacion): Observable<any> {
-    return this.http.put<any>(this.URL + `/editar/${id}`, educacion);
+    return this.http.put<any>(this.URL + `/editar/${id}?establecimiento=${educacion.establecimiento}&titulo=${educacion.titulo}&fecha_desde=${educacion.fecha_desde}&fecha_hasta=${educacion.fecha_hasta}&imagen=${educacion.imagen}`, educacion);
   }
 }
