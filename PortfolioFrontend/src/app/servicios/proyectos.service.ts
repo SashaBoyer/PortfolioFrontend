@@ -7,7 +7,9 @@ import { Proyectos } from '../model/proyectos.model';
   providedIn: 'root'
 })
 export class ProyectosService {
-  URL = 'https://portfolio-backend-deploy.onrender.com/proyecto';
+  asd1 = 'http://localhost:10000/educacion';
+  asd2 = 'https://portfolio-backend-deploy.onrender.com/proyecto';
+  URL = this.asd2;
 
   constructor(private http: HttpClient) { }
 

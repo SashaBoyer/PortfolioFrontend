@@ -7,7 +7,9 @@ import { Educacion } from '../model/educacion.model';
   providedIn: 'root'
 })
 export class EducacionService {
-  URL = 'https://portfolio-backend-deploy.onrender.com/educacion'
+  asd1 = 'http://localhost:10000/educacion';
+  asd2 = 'https://portfolio-backend-deploy.onrender.com/educacion';
+  URL = this.asd2;
 
   constructor(private http: HttpClient) { }
 

@@ -7,8 +7,9 @@ import { Experiencia } from '../model/experiencia.model';
   providedIn: 'root'
 })
 export class ExperienciaService {
-
-  URL = 'https://portfolio-backend-deploy.onrender.com/experiencia'
+  asd1 = 'http://localhost:10000/experiencia';
+  asd2 = 'https://portfolio-backend-deploy.onrender.com/experiencia';
+  URL = this.asd2;
 
   constructor(private http: HttpClient) { }
 
@@ -20,8 +21,12 @@ export class ExperienciaService {
     return this.http.post<string>(`${this.URL}/crear`, experiencia);
   }
 
-  public deleteExperiencia(id: any): Observable<string> {
-    return this.http.delete<string>(`${this.URL}/borrar/${id}`);
+  public saveExperiencia(experiencia: Experiencia): Observable<any> {
+    return this.http.post<any>(`${this.URL}/crear`, experiencia);
+  }
+
+  public deleteExperiencia(id: any): Observable<any> {
+    return this.http.delete<any>(`${this.URL}/borrar/${id}`);
   }
 
   public editExperiencia(id: any, experiencia: Experiencia): Observable<Experiencia> {

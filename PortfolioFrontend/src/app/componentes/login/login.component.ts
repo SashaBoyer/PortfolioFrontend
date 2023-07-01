@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit{
   }
 
   onLogin(): void{
-  console.log("contra" + this.password);
+  console.log("contraseña: " + this.password);
   this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password); 
   this.authService.login(this.loginUsuario).subscribe(data=>{
       this.isLogged = true;

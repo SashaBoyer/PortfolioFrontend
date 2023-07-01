@@ -27,6 +27,7 @@ import { EditarSoftComponent } from './componentes/editar-soft/editar-soft.compo
 import { EditarIdiomasComponent } from './componentes/editar-idiomas/editar-idiomas.component';
 import { EditarProyectosComponent } from './componentes/editar-proyectos/editar-proyectos.component';
 import { NuevaEducacionComponent } from './componentes/nueva-educacion/nueva-educacion.component';
+import { NuevaExperienciaComponent } from './componentes/nueva-experiencia/nueva-experiencia.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { NuevaEducacionComponent } from './componentes/nueva-educacion/nueva-edu
     EditarSoftComponent,
     EditarIdiomasComponent,
     EditarProyectosComponent,
-    NuevaEducacionComponent
+    NuevaEducacionComponent,
+    NuevaExperienciaComponent
   ],
   imports: [
     BrowserModule,

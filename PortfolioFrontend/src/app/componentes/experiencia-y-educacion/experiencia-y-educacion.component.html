@@ -1,60 +1,33 @@
 <section id="experiencia">
-  
+
   <!--experiencia-->
 
-  <div class="experiencia-educacion container-fluid p-5 text-white">  
-    <div class="row justify-content-center">  
+  <div class="experiencia-educacion container-fluid p-5 text-white">
+    <div class="row justify-content-center">
       <h2 class="mb-4 text-center">Experiencia Laboral</h2>
-      <div class="col-lg-10 col-auto"> 
-        
-<!--*ngFor="let expe of listaExperiencia""--><!--(click)="editar_experiencia()""-->
-        <div class="card-experiencia border border-light card m-3 mx-5">
+      <div class="col-lg-10 col-auto">
 
+        <div class="card-experiencia border border-light card m-3 mx-5" *ngFor="let expe of listaExperiencia">
           <div class="d-flex flex-row-reverse">
-            <button type="button" class="boton-eliminar-experiencia btn btn-danger" *ngIf="isLogged">X</button>
-            <button type="button" class="boton-editar-experiencia btn btn-primary" *ngIf="isLogged" routerLink="/modificar_experiencia"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
-            <!--/{{experienciaLab.id}}-->
-          </div>    
-
-          <div class="card-body card-color-fondo">
+            <button type="button" class="boton-eliminar-experiencia btn btn-danger" *ngIf="isLogged" (click)="borrarExperiencia(expe.id)">X</button>
+            <button type="button" class="boton-editar-experiencia btn btn-primary" *ngIf="isLogged" routerLink="/editar_experiencia/{{expe.id}}"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
+          </div>
+          <div class="card-body card-color-fondo" >
             <ul>
               <li>
-                <h3>Empresa 1</h3> <!--{{experienciaLab.empresa}}-->
-                <h5>Puesto</h5><!--{{experienciaLab.puesto}}-->
-                <h6><time>Desde</time>-<time>Hasta</time></h6><!--{{experienciaLab.fecha-desde}}  {{experienciaLab.fecha-hasta}}-->
+                <h3>{{expe.empresa}}</h3>
+                <h5>{{expe.puesto}}</h5>
+                <h6><time>{{expe.fecha_desde}}</time>-<time>{{expe.fecha_hasta}}</time></h6>
               </li>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim aperiam placeat odit harum natus saepe, modi nesciunt vel dolore suscipit.
-              </p><!--{{experienciaLab.descripcion}}-->
+                {{expe.descripcion}}
+              </p>
             </ul>
           </div>
         </div>
 
+        <button type="button" class="d-block mx-auto btn btn-secondary" routerLink="/nueva_experiencia" *ngIf="isLogged">Añadir</button>
 
-
-        <div class="card-experiencia border border-light card m-3 mx-5">
-
-          <div class="d-flex flex-row-reverse">
-            <button type="button" class="boton-eliminar-experiencia btn btn-danger" *ngIf="isLogged" (click)="borrarExperiencia">X</button>
-              <button type="button" class="boton-editar-experiencia btn btn-primary" *ngIf="isLogged" routerLink="/modificar_experiencia"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
-            </div> 
-
-          <div class="card-body card-color-fondo">
-            <ul>
-              <li>
-                <h3>Empresa 2</h3>
-                <h5>Puesto</h5>
-                <h6><time>Desde</time>-<time>Hasta</time></h6>
-              </li>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error neque ab laborum impedit sed itaque commodi doloribus consequuntur vel excepturi?
-              </p>
-            </ul>
-          </div>
-        </div>  
-
-        <button type="button" class="d-block mx-auto btn btn-secondary" *ngIf="isLogged">Añadir</button>  
-          
       </div>
     </div>
   </div>
@@ -65,65 +38,28 @@
 
 
 <section id="estudios">
-  
+
     <!--estudios-->
-  
-      <div class="experiencia-educacion container-fluid p-5 text-white text-center">  
+
+      <div class="experiencia-educacion container-fluid p-5 text-white text-center">
         <h2 class="mb-4">Estudios</h2>
-        
+
         <div class="d-inline-block">
         <!--Tarjeta educacion secundaria-->
             <div *ngFor="let Educacion of educacion" class="card mx-2 card-color-fondo d-inline-block" style="width: 18rem;">
             <button type="button" class="boton-eliminar-educacion btn btn-danger" *ngIf="isLogged" (click)="borrarEducacion(Educacion.id)">X</button>
-            <button type="button" class="boton-editar-educacion btn btn-primary" *ngIf="isLogged" routerLink="editar_educacion/{{Educacion.id}}"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
+            <button type="button" class="boton-editar-educacion btn btn-primary" *ngIf="isLogged" routerLink="/editar_educacion/{{Educacion.id}}"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
             <img [src]="Educacion.imagen" class="card-img-top" alt="">
             <div class="card-body">
               <h5 class="card-title">{{Educacion.establecimiento}}</h5>
               <p class="card-text">{{Educacion.titulo}}</p>
-              <p class="card-text"><time>{{Educacion.fecha_desde}}</time>-<time>{{Educacion.fecha_hasta}}</time></p>
+              <p class="card-text"><time>{{Educacion.fecha_desde}}</time> / <time>{{Educacion.fecha_hasta}}</time></p>
             </div>
           </div>
-
-          <!--Tarjeta educacion linkedin-->
-         <div class="card mx-auto card-color-fondo d-inline-block" style="width: 18rem;">
-          <button type="button" class="boton-eliminar-educacion btn btn-danger" *ngIf="isLogged">X</button>
-          <button type="button" class="boton-editar-educacion btn btn-primary" *ngIf="isLogged"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
-          <img src="../assets/linkedinLearning.jpg" class="card-img-top" alt="linkedin Learning">
-          <div class="card-body">
-            <h5 class="card-title">Linkedin Learning</h5>
-            <p class="card-text">Ventas y Servicio al Cliente</p>
-            <p class="card-text"><time>abril 2021</time>-<time>junio 2021</time></p>
-          </div>
-        </div>
-        
-        <!--Tarjeta educacion axioma-->
-        <div class="card mx-auto card-color-fondo d-inline-block" style="width: 18rem;">
-          <button type="button" class="boton-eliminar-educacion btn btn-danger" *ngIf="isLogged">X</button>
-          <button type="button" class="boton-editar-educacion btn btn-primary" *ngIf="isLogged"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
-          <img src="../assets/axioma.jpg" class="card-img-top" alt="instituto Axioma">
-          <div class="card-body">
-            <h5 class="card-title">Instituto Axioma</h5>
-            <p class="card-text">Marketing Digital</p>
-            <p class="card-text"><time>Abril 2019</time>-<time>Septiembre 2019</time></p>
-          </div>
         </div>
 
-        <!--Tarjeta educacion mindhub-->
-          <div class="card mx-auto card-color-fondo d-inline-block" style="width: 18rem;">
-            <button type="button" class="boton-eliminar-educacion btn btn-danger" *ngIf="isLogged">X</button>
-            <button type="button" class="boton-editar-educacion btn btn-primary" *ngIf="isLogged"><i class="fa-solid fa-pen fa-sm" style="color: #ffffff;"></i></button>
-          <img src="../assets/mindHub.jpg" class="card-img-top" alt="mindHub">
-          <div class="card-body">
-            <h5 class="card-title">MindHub LA</h5>
-            <p class="card-text">Testing</p>
-            <p class="card-text"><time>febrero 2023</time>-<time>abril 2023</time></p>
-          </div>
-        </div>
-
-        </div>
-        
         <button type="button" class="d-block mx-auto btn btn-secondary" *ngIf="isLogged" routerLink="/nueva_educacion">Añadir</button>
-      
-      </div>   
-  
+
+      </div>
+
 </section>

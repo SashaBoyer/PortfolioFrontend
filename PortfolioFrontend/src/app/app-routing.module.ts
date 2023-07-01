@@ -7,15 +7,17 @@ import { EditarPersonaComponent } from './componentes/editar-persona/editar-pers
 import { EditarProyectosComponent } from './componentes/editar-proyectos/editar-proyectos.component';
 import { NuevaEducacionComponent } from './componentes/nueva-educacion/nueva-educacion.component';
 import { EditarEducacionComponent } from './componentes/editar-educacion/editar-educacion.component';
-
+import { NuevaExperienciaComponent } from './componentes/nueva-experiencia/nueva-experiencia.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
   {path:'login', component: LoginComponent},
-  {path:'modificar_experiencia', component: EditarExperienciaComponent},
+  {path:'editar_experiencia/:id', component: EditarExperienciaComponent},
   {path:'editar_persona', component: EditarPersonaComponent},
   {path:'editar_proyectos', component: EditarProyectosComponent},
+  {path:'nueva_experiencia', component: NuevaExperienciaComponent},
   {path:'nueva_educacion', component: NuevaEducacionComponent},
+  {path:'editar_experiencia', component: EditarExperienciaComponent},
   {path:'editar_educacion/:id', component: EditarEducacionComponent}
 ];
 

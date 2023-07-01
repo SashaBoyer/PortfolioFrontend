@@ -1,26 +1,26 @@
-<div class="containerEducacion"><!--*ngIf="educacion"-->
+<div class="containerEducacion" *ngIf="educacion">
   <h1 class="m-5">Modificar Educación</h1>
 
-  <form  (ngSubmit)="onUpdate()" class="m-5" novalidate><!--#f="ngForm"-->
+  <form  (ngSubmit)="onUpdate()" class="m-5" novalidate #f="ngForm">
     <div class="form-group m-3">
       <label for="establecimiento">Establecimiento</label>
-      <input type="text" class="form-control" id="establecimiento" name="establecimiento" placeholder="Nombre de establecimiento" [(ngModel)]="educacion.establecimiento">
+      <input type="text" class="form-control" id="establecimiento" name="establecimiento" placeholder="Nombre de establecimiento" [(ngModel)]="educacion.establecimiento" required>
     </div>
     <div class="form-group m-3">
       <label for="titulo">Titulo</label>
-      <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulo" [(ngModel)]="educacion.titulo">
+      <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulo" [(ngModel)]="educacion.titulo" required>
     </div>
     <div class="form-group m-3">
         <label for="fecha_desde">Fecha Desde</label>
-        <input type="date" class="form-control" id="fecha_desde" name="fecha_desde" [(ngModel)]="educacion.fecha_desde">
+        <input type="date" class="form-control" id="fecha_desde" name="fecha_desde" [(ngModel)]="educacion.fecha_desde" required>
     </div>
     <div class="form-group m-3">
         <label for="fecha_hasta">Fecha Hasta</label>
-        <input type="date" class="form-control" id="fecha_hasta" name="fecha_hasta" [(ngModel)]="educacion.fecha_hasta">
+        <input type="date" class="form-control" id="fecha_hasta" name="fecha_hasta" [(ngModel)]="educacion.fecha_hasta" required>
       </div>
       <div class="form-group m-3">
         <label for="imagen">Imagen</label>
-        <input type="url" class="form-control" id="imagen" name="imagen" [(ngModel)]="educacion.imagen" placeholder="Url de imagen">
+        <input type="url" class="form-control" id="imagen" name="imagen" [(ngModel)]="educacion.imagen" placeholder="Url de imagen" required>
       </div>
     <button type="submit" value="Enviar" class="btn btn-dark m-3">Enviar</button>
     </form>

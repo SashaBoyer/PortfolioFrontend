@@ -1,27 +1,28 @@
-<div class="container"></div>
+<div class="containerExperiencia" *ngIf="experienciaLab">
 
 <h1 class="m-5">Modificar experiencia</h1>
 
-<form (ngSubmit)="editarExpe()" class="m-5">
+<form (ngSubmit)="editarExpe()" class="m-5" novalidate #f="ngForm">
     <div class="form-group m-3">
-      <label for="nombreEmpresa">Empresa</label>
-      <input type="text" class="form-control" id="nombreEmpresa" name="empresa" placeholder="Nombre de empresa" [(ngModel)]="experienciaLab.empresa" required="">
+      <label for="empresa">Empresa</label>
+      <input type="text" class="form-control" id="empresa" name="empresa" placeholder="Nombre de empresa" [(ngModel)]="experienciaLab.empresa" required>
     </div>
     <div class="form-group m-3">
-      <label for="puestoEmpresa">Puesto</label>
-      <input type="text" class="form-control" id="puestoEmpresa" name="puesto" placeholder="Nombre de puesto" [(ngModel)]="experienciaLab.puesto" required="">
+      <label for="puesto">Puesto</label>
+      <input type="text" class="form-control" id="puesto" name="puesto" placeholder="Nombre de puesto" [(ngModel)]="experienciaLab.puesto" required>
     </div>
     <div class="form-group m-3">
-        <label for="fechaDesde">Fecha Desde</label>
-        <input type="date" class="form-control" id="fechaDesde" name="fecha_desde" [(ngModel)]="experienciaLab.fecha_desde" required="">
+        <label for="fecha_desde">Fecha Desde</label>
+        <input type="date" class="form-control" id="fecha_desde" name="fecha_desde" [(ngModel)]="experienciaLab.fecha_desde" required>
     </div>
     <div class="form-group m-3">
-        <label for="fechaHasta">Fecha Hasta</label>
-        <input type="date" class="form-control" id="fechaHasta" name="fecha_hasta" [(ngModel)]="experienciaLab.fecha_hasta" required="">
+        <label for="fecha_hasta">Fecha Hasta</label>
+        <input type="date" class="form-control" id="fecha_hasta" name="fecha_hasta" [(ngModel)]="experienciaLab.fecha_hasta" required>
       </div>
       <div class="form-group m-3">
-        <label for="descripcionExperiencia">Descripción</label>
-        <input type="text" class="form-control" id="descripcionExperiencia" name="descripcion" placeholder="Descripción del puesto" [(ngModel)]="experienciaLab.descripcion" required="">
+        <label for="descripcion">Descripción</label>
+        <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripción del puesto" [(ngModel)]="experienciaLab.descripcion">
       </div>
     <button type="submit" value="Enviar" class="btn btn-dark m-3">Enviar</button>
   </form>
+</div>

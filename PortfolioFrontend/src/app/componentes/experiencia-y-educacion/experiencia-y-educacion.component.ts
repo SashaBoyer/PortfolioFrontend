@@ -9,68 +9,66 @@ import { TokenService } from 'src/app/servicios/token.service';
 @Component({
   selector: 'app-experiencia-y-educacion',
   templateUrl: './experiencia-y-educacion.component.html',
-  styleUrls: ['./experiencia-y-educacion.component.css']
+  styleUrls: ['./experiencia-y-educacion.component.css'],
 })
-
 export class ExperienciaYEducacionComponent implements OnInit {
-  
   educacion: Educacion[] = [];
 
   listaExperiencia: Experiencia[] = [];
 
   isLogged = false;
 
-  constructor(private router:Router, public educacionService: EducacionService, public experienciaService: ExperienciaService, private tokenService:TokenService) {}
-
+  constructor(
+    private router: Router,
+    public educacionService: EducacionService,
+    public experienciaService: ExperienciaService,
+    private tokenService: TokenService
+  ) {}
 
   ngOnInit(): void {
-    if(this.tokenService.getToken()){
+    if (this.tokenService.getToken()) {
       this.isLogged = true;
+    } else {
+      this.isLogged = false;
     }
-    else {this.isLogged = false;}
     this.cargarExperiencia();
     this.cargarEducacion();
-  };
-
-  cargarEducacion(): void {
-    this.educacionService.listaEducacion().subscribe(
-      data => {this.educacion = data;
-      console.log("CONSOLE PRUEBA EDUCACION: "+this.educacion[1].establecimiento)
-    })
-  };
-
-  borrarEducacion(id?: number){
-    if(id != undefined){
-      this.educacionService.deleteEducacion(id).subscribe(
-        data => {
-          this.cargarEducacion();
-        }, err=> {
-          alert("No se pudo borrar la educacion");
-        })
-      }
   }
 
-    cargarExperiencia(): void {
-      this.experienciaService.getExperiencia().subscribe(data => {this.listaExperiencia = data
-        console.log("CONSOLE PRUEBA EXPERIENCIA: "+this.listaExperiencia[1].empresa)
-      })
-    }
+  cargarEducacion(): void {
+    this.educacionService.listaEducacion().subscribe((data) => {
+      this.educacion = data;
+    });
+  }
 
-    borrarExperiencia(id?: number): void {
-      if(id != undefined){
-        this.experienciaService.deleteExperiencia(id).subscribe(
-          data => {
-            this.cargarExperiencia();
-          }, err=> {
-            alert("No se pudo borrar la experiencia");
-          })
+  borrarEducacion(id?: number) {
+    if (id != undefined) {
+      this.educacionService.deleteEducacion(id).subscribe(
+        (data) => {
+          this.cargarEducacion();
+        },
+        (err) => {
+          alert('No se pudo borrar la educacion');
         }
+      );
     }
-  
-    /*editar_experiencia(){
-      this.router.navigate(['/experiencia'])
-    }*/
+  }
+  cargarExperiencia(): void {
+    this.experienciaService.getExperiencia().subscribe((data) => {
+      this.listaExperiencia = data;
+    });
+  }
 
+  borrarExperiencia(id?: number): void {
+    if (id != undefined) {
+      this.experienciaService.deleteExperiencia(id).subscribe(
+        (data) => {
+          this.cargarExperiencia();
+        },
+        (err) => {
+          alert('No se pudo borrar la experiencia');
+        }
+      );
+    }
+  }
 }
-
-

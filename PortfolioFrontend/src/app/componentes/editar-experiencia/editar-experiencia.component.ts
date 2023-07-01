@@ -11,8 +11,8 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 
 export class EditarExperienciaComponent implements OnInit{
 
-  experienciaLab: Experiencia = null;
-  
+  experienciaLab: Experiencia;
+
 
   /*temporal_experiencia: Experiencia = new Experiencia("","","","","");*/
 
@@ -43,5 +43,5 @@ export class EditarExperienciaComponent implements OnInit{
     })
 
   }
-    
+
 }
